@@ -1,27 +1,28 @@
-require_relative 'player'
-require_relative 'game'
-require_relative 'die'
-require_relative 'clumsy_player'
-require_relative 'berserk_player'
+require_relative '../lib/swat_game/player'
+require_relative '../lib/swat_game/game'
+require_relative '../lib/swat_game/clumsy_player'
+require_relative '../lib/swat_game/berserk_player'
+require_relative '../lib/swat_game/die'
 
-knuckleheads = SwatGame::Game.new("Knuckleheads")
-knuckleheads.load_players(ARGV.shift || "players.csv")
+game = SwatGame::Game.new("Knuckleheads")
+default_player_file = File.join(File.dirname(__FILE__), 'players.csv')
+game.load_players(ARGV.shift || default_player_file)
 clumsy_player1 = SwatGame::ClumsyPlayer.new("ditz", 105, 3)
-knuckleheads.add_player(clumsy_player1)
+game.add_player(clumsy_player1)
 berserk_player1 = SwatGame::BerserkPlayer.new("turnt", 50)
-knuckleheads.add_player(berserk_player1)
+game.add_player(berserk_player1)
 
 loop do
   puts "\nHow many game rounds? ('quit' to exit)"
   answer = gets.chomp.downcase
   case answer
   when /^\d+$/
-    knuckleheads.play(answer.to_i)
+    game.play(answer.to_i)
   when 'quit', 'exit'
-    knuckleheads.print_stats
+    game.print_stats
     break
   else
     puts "Please enter a number or 'quit'"
   end
 end
-knuckleheads.save_high_scores
+game.save_high_scores
