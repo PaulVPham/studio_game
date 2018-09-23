@@ -1,5 +1,5 @@
-require_relative 'player'
-require_relative 'treasure_trove'
+require 'swat_game/player'
+require 'swat_game/treasure_trove'
 
 module SwatGame
   describe Player do

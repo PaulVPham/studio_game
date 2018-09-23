@@ -1,5 +1,5 @@
-require_relative 'player'
-require_relative 'berserk_player'
+require 'swat_game/player'
+require 'swat_game/berserk_player'
 
 module SwatGame
   describe BerserkPlayer do
