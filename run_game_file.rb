@@ -4,11 +4,11 @@ require_relative 'die'
 require_relative 'clumsy_player'
 require_relative 'berserk_player'
 
-knuckleheads = Game.new("Knuckleheads")
+knuckleheads = SwatGame::Game.new("Knuckleheads")
 knuckleheads.load_players(ARGV.shift || "players.csv")
-clumsy_player1 = ClumsyPlayer.new("ditz", 105, 3)
+clumsy_player1 = SwatGame::ClumsyPlayer.new("ditz", 105, 3)
 knuckleheads.add_player(clumsy_player1)
-berserk_player1 = BerserkPlayer.new("turnt", 50)
+berserk_player1 = SwatGame::BerserkPlayer.new("turnt", 50)
 knuckleheads.add_player(berserk_player1)
 
 loop do
