@@ -1,5 +1,5 @@
-require_relative 'player'
-require_relative 'clumsy_player'
+require 'swat_game/player'
+require 'swat_game/clumsy_player'
 
 module SwatGame
   describe ClumsyPlayer do

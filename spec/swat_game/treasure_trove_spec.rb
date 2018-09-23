@@ -1,4 +1,4 @@
-require_relative 'treasure_trove'
+require 'swat_game/treasure_trove'
 
 module SwatGame
   describe TreasureTrove do

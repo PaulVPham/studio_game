@@ -1,7 +1,7 @@
-require_relative 'game'
-require_relative 'die'
-require_relative 'game_turn'
-require_relative 'treasure_trove'
+require 'swat_game/game'
+require 'swat_game/die'
+require 'swat_game/game_turn'
+require 'swat_game/treasure_trove'
 
 module SwatGame
   describe Game do
