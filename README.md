@@ -11,4 +11,4 @@ Learned basic programming concepts with Ruby: methods, classes, object state and
 
 ## Credits
 This is part of the Ruby Programming course from the Pragmatic Studio series ran by Mike and Nicole Clark.
-Check it out here: [HTML 5 UP](https://pragmaticstudio.com/)
+Check it out here: [The Pragmatic Studio](https://pragmaticstudio.com/)
