@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/swat_game/player'
+require_relative '../lib/swat_game/game'
+require_relative '../lib/swat_game/clumsy_player'
+require_relative '../lib/swat_game/berserk_player'
+require_relative '../lib/swat_game/die'
+
+game = SwatGame::Game.new("Knuckleheads")
+default_player_file = File.join(File.dirname(__FILE__), 'players.csv')
+game.load_players(ARGV.shift || default_player_file)
+clumsy_player1 = SwatGame::ClumsyPlayer.new("ditz", 105, 3)
+game.add_player(clumsy_player1)
+berserk_player1 = SwatGame::BerserkPlayer.new("turnt", 50)
+game.add_player(berserk_player1)
+
+loop do
+  puts "\nHow many game rounds? ('quit' to exit)"
+  answer = gets.chomp.downcase
+  case answer
+  when /^\d+$/
+    game.play(answer.to_i)
+  when 'quit', 'exit'
+    game.print_stats
+    break
+  else
+    puts "Please enter a number or 'quit'"
+  end
+end
+game.save_high_scores
